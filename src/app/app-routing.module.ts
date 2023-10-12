@@ -9,14 +9,13 @@ import { PageMesTableauxComponent } from './pages/page-mes-tableaux/page-mes-tab
 import { PageMesFavorisComponent } from './pages/page-mes-favoris/page-mes-favoris.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: '', component: AppComponent },
   { path: 'connexion', component: PageConnexionComponent }, // peut-etre modifier connexion en login
   { path: 'inscription', component: PageInscriptionComponent }, // peut-etre modifier inscription en register
-  { path: 'accuiel', component: PageAccueilComponent }, // peut-etre modifier accueil en home
+  { path: 'accueil', component: PageAccueilComponent }, // peut-etre modifier accueil en home
   { path: 'mes-tableaux', component: PageMesTableauxComponent },
   { path: 'mes-favoris', component: PageMesFavorisComponent},
-  
   { path: '**', component: PageErreur404Component },
 ];
 
