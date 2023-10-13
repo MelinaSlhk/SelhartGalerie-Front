@@ -5,15 +5,15 @@ CREATE TABLE utilisateur (
   nom VARCHAR(255) NOT NULL,
   prenom VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  mot de passe CHAR(60) NOT NULL,
-  administrateur BOOLEAN
+  motDePasse CHAR(60) NOT NULL,
+  admin BOOLEAN
 );
 
 CREATE TABLE image (
   id SERIAL PRIMARY KEY,
   nom VARCHAR(255) NOT NULL,
   description VARCHAR(255) NOT NULL,
-  type_mime VARCHAR(255) NOT NULL
+  typemime VARCHAR(255) NOT NULL
 );
 
 CREATE TABLE tableau (

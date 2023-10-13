@@ -1,13 +1,16 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+// import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Connexion } from '../models/connexion';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
-  connexion(data: { email: string; mot_de_passe: string }) {
+
+  connexion(data: Connexion) {
     interface ApiResponse {
       accessToken: string;
     }
@@ -24,12 +27,15 @@ export class AuthService {
     nom: string;
     prenom: string;
     email: string;
-    mot_de_passe: string;
+    motdepasse: string;
   }) {
-    return this.http.post(`http://localhost:8080/api/auth/inscription`, data);
+    return this.http.post(
+      `http://localhost:3000/api/auth/inscription`,
+      data
+    );
   }
 
-  logout(){
+  logout() {  //deconnexion
     localStorage.removeItem('token');
     this.router.navigate(['/connexion']);
   }

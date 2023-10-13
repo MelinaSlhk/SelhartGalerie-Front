@@ -1,0 +1,5 @@
+.carousel-image {
+  width: 300px; /* Largeur souhaitée */
+  height: 350px; /* Hauteur souhaitée */
+  object-fit: cover; /* Pour conserver l'aspect ratio et couper l'excès */
+}

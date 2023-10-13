@@ -12,6 +12,8 @@ import { PageErreur404Component } from './pages/page-erreur404/page-erreur404.co
 import { PageInscriptionComponent } from './pages/page-inscription/page-inscription.component';
 import { PageConnexionComponent } from './pages/page-connexion/page-connexion.component';
 import { BarreDeNavigationComponent } from './components/barre-de-navigation/barre-de-navigation.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,16 @@ import { BarreDeNavigationComponent } from './components/barre-de-navigation/bar
     PageErreur404Component,
     PageInscriptionComponent,
     PageConnexionComponent,
-    BarreDeNavigationComponent
+    BarreDeNavigationComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
