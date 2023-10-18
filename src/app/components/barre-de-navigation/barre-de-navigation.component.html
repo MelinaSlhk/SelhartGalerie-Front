@@ -20,7 +20,7 @@
           <!-- 3 - condition pour afficher le lien si le user connecté est admin -->
           <!-- 4 - pense à recharger et à respirer !  -->
           <!-- 5 - Faire une veille sur les subject (Observables)  -->
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="isAdmin">
           <a class="nav-link" [routerLink]="'/admin'">Espace Admin</a>
         </li>
       </ul>
