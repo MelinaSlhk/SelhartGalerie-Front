@@ -26,17 +26,21 @@ export class PageConnexionComponent implements OnInit {
   });
 
   connexion() {
-    if (this.connexionForm.valid) { let email= this.connexionForm.value.email;
-    let motdepasse= this.connexionForm.value.motdepasse;
+      console.log(this.connexionForm.value);  
+    if (this.connexionForm) { 
+      console.log("formvalid");
+      
+      let email= this.connexionForm.value.email;
+      let motdepasse= this.connexionForm.value.motdepasse;
   this.authService.connexion(email, motdepasse).subscribe({
     next:(response:any) => {
-      if(response && response.accessToken) {
+      if(response)  {   //&& response.accessToken) 
        console.log('reponse',response);
         localStorage.setItem('accesstoken', response.accessToken);
         localStorage.setItem('prenom', response.utilisateur.prenom);
         // 1 - faire la même chose avec le boolean administrateur
         this.router.navigate(['/accueil']);
-        location.reload();
+        // location.reload();
         }
       }
     }) }

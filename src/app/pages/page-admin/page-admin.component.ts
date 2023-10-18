@@ -10,7 +10,7 @@ import { TableauService } from 'src/app/services/tableau.service';
 export class PageAdminComponent {
   tableaux: Tableau[] = [];
   isEditing = false;
-  // estAdministrateur = false;
+  // isAdmin = true;
 
   constructor(private tableauService: TableauService) {}
 
