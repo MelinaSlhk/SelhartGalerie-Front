@@ -6,6 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Utilisateur } from 'src/app/models/utilisateur';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -44,11 +45,12 @@ export class PageInscriptionComponent {
   inscription() {
     // alert('coucou');
     if (this.inscriptionForm) {
-      const data = {
+      const data: Utilisateur = {
         nom: this.inscriptionForm.get('nom')?.value,
         prenom: this.inscriptionForm.get('prenom')?.value,
         email: this.inscriptionForm.get('email')?.value,
         motdepasse: this.inscriptionForm.get('motDePasse')?.value,
+        administrateur: false,
       };
       console.log('are you ok ? ', data);
       this.authService.inscription(data).subscribe((response) => {

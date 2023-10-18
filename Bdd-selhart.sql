@@ -6,7 +6,7 @@ CREATE TABLE utilisateur (
   prenom VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   motDePasse CHAR(60) NOT NULL,
-  admin BOOLEAN
+  administrateur BOOLEAN NOT NULL
 );
 
 CREATE TABLE image (

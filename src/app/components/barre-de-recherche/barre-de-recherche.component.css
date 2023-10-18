@@ -1,0 +1,11 @@
+.custom-search-bar {
+    max-width: 20%;
+    margin-bottom: 3%;
+}
+
+.custom-search-bar button.btn-outline-success:hover {
+    background-color: #4E888F;
+    border-color: #4E888F;
+    color: #fff; /* Couleur du texte */
+}
+

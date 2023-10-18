@@ -7,6 +7,9 @@ import { PageAccueilComponent } from './pages/page-accueil/page-accueil.componen
 import { PageErreur404Component } from './pages/page-erreur404/page-erreur404.component';
 import { PageMesTableauxComponent } from './pages/page-mes-tableaux/page-mes-tableaux.component';
 import { PageMesFavorisComponent } from './pages/page-mes-favoris/page-mes-favoris.component';
+import { PageMonCompteComponent } from './pages/page-mon-compte/page-mon-compte.component';
+import { PageAdminComponent } from './pages/page-admin/page-admin.component';
+import { AjouterTableauComponent } from './pages/ajouter-tableau/ajouter-tableau.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: 'inscription', component: PageInscriptionComponent }, // peut-etre modifier inscription en register
   { path: 'accueil', component: PageAccueilComponent }, // peut-etre modifier accueil en home
   { path: 'mes-tableaux', component: PageMesTableauxComponent },
-  { path: 'mes-favoris', component: PageMesFavorisComponent},
+  { path: 'mes-favoris', component: PageMesFavorisComponent },
+  { path: 'mon-compte', component: PageMonCompteComponent },
+  { path: 'admin', component: PageAdminComponent },
+  { path: 'ajouter-tableau', component: AjouterTableauComponent },
   { path: '**', component: PageErreur404Component },
 ];
 

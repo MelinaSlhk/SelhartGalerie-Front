@@ -1,0 +1,26 @@
+.bg-color {
+  /* background-color: #4E888F; */
+  background-color: #1c0913;
+}
+
+.text-center {
+margin-top: 0;
+margin-right: 4%;
+color: white;
+}
+
+.nav-link:hover {
+  color: #83E8Ba;
+  text-decoration: underline;
+}
+
+.navbar-nav .nav-link, .navbar-nav .fa-user {
+  color: #83E8Ba !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important; /* Couleur au survol */
+  text-decoration: underline; /* Soulignement au survol (facultatif) */
+}
+
+

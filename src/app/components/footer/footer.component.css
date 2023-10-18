@@ -1,0 +1,13 @@
+.custom-footer-background {
+    background-color: #1c0913; /* Couleur de fond #4E888F */
+    color: #fff; /* Couleur du texte (blanc) */
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+}
+
+.social-icons a {
+  margin-right: 5%;
+}

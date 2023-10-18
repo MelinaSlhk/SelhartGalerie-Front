@@ -14,6 +14,10 @@ import { PageConnexionComponent } from './pages/page-connexion/page-connexion.co
 import { BarreDeNavigationComponent } from './components/barre-de-navigation/barre-de-navigation.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BarreDeRechercheComponent } from './components/barre-de-recherche/barre-de-recherche.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { CardComponent } from './components/card/card.component';
+import { AjouterTableauComponent } from './pages/ajouter-tableau/ajouter-tableau.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +31,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PageInscriptionComponent,
     PageConnexionComponent,
     BarreDeNavigationComponent,
+    BarreDeRechercheComponent,
+    FooterComponent,
+    CardComponent,
+    AjouterTableauComponent,
   ],
   imports: [
     BrowserModule,

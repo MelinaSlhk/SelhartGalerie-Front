@@ -1,0 +1,12 @@
+<!-- <form class="d-flex" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">🔎 Rechercher un tableau</button>
+</form> -->
+
+<div class="form-outline mt-2 custom-search-bar">
+    <form class="d-flex" role="search">
+    <input #resultSearch type="search" id="form1" class="form-control" placeholder="Rechercher un tableau" aria-label="Search"
+        (input)="inputUtilisateur.emit(resultSearch.value)">
+        <button class="btn btn-outline-success custom-search-button" type="submit">🔎</button>
+     </form>
+</div>

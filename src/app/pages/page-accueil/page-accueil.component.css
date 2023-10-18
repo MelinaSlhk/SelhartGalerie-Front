@@ -1,0 +1,46 @@
+ h2 {
+    font-family: Monospace;
+  }
+.marge{
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+}
+.imgcenter{
+  text-align : center ;
+}
+img {
+    width: 20%;
+    
+}
+body{
+ background-image: url("src/assets/images/Color-Neon-Splatter-Paint-Designs-On-Black-Background-71737400-1.png");
+    color: white;
+}
+.colonne{
+  columns: 2;
+  text-align: justify;
+  margin:20px;
+  padding:10px;
+}
+
+.tableaux-link {
+  color: #83E8Ba;
+  text-decoration: underline; /* Soulignement du lien */
+  cursor: pointer; /* Curseur de type main lorsque survolé */
+  &:hover {
+    color: white; /* Couleur du texte au survol */
+  }
+}
+
+.blurred-background {
+  backdrop-filter: blur(30px);
+  display: inline-block; /* Pour réduire la largeur à celle du contenu */
+  padding: 0 12px; /* Ajustez la valeur de padding selon vos préférences */
+  border-radius: 12px;
+}
+
+.colonne{
+  backdrop-filter: blur(30px);
+  border-radius: 12px;
+}

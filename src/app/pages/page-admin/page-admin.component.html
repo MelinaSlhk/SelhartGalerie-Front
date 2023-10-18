@@ -1,1 +1,59 @@
-<p>page-admin works!</p>
+<app-barre-de-recherche></app-barre-de-recherche>
+
+<button type="button" class="btn btn-outline-success addbtn" [routerLink]="'/ajouter-tableau'">Ajouter un tableau</button>
+
+<table class="modern-table">
+    <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Dimension</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+
+       <tbody>
+            <tr *ngFor="let tableau of tableaux; let i = index">
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.nom" type="text" />
+        
+                    {{ !isEditing ? tableau.nom : "" }}
+                </td>
+        
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.dimension" type="text" />
+        
+                    {{ !isEditing ? tableau.dimension : "" }}
+                </td>
+            
+                <td>
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.image" type="text" />
+        
+                    {{ !isEditing ? tableau.image : "" }}
+                </td>
+        
+                <td>
+                    <button class="edit-btn" (click)="modifierTableau(tableau.id)">Modifier</button>
+        
+                    <button class="delete-btn" (click)="supprimerTableau(tableau.id, i)">
+                        Supprimer
+                    </button>
+        
+                    <button class="confirm-btn" *ngIf="isEditing"
+                        (click)="confirmerChangements(tableau.id, tableau.nom, tableau.dimension, tableau.image)">
+                        Confirmer
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <tr *ngFor="let tableau of tableaux; let i = index">
+        <td>{{ tableau.nom }}</td>
+        <td>{{ tableau.dimension }}</td>
+        <td>
+            <button class="edit-btn" (click)="modifierTableau(tableau)">Modifier</button>
+            <button class="delete-btn" (click)="supprimerTableau(i)">Supprimer</button>
+        </td>
+    </tr> -->
+        
+
