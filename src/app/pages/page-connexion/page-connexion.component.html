@@ -1,37 +1,42 @@
-<div class="flex justify-center items-center min-h-screen">
-<div
-    class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 mt-8">
-    <form class="space-y-6" (ngSubmit)="connexion()" [formGroup]="connexionForm">
-        <h5 class="text-xl font-medium text-gray-900 dark:text-white">Vous avez déjà un compte ?</h5>
-        <p>CONNECTEZ-VOUS</p>
-        <div>
-            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">📧 Votre email</label>
-            <input type="email" id="email"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                placeholder="name@company.com" required formControlName="email">
-        </div>
-        <div>
-            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> Votre mot de passe</label>
-            <input type="password" id="password" placeholder="••••••••"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                required formControlName="motdepasse">
-        </div>
-        <div class="flex items-start">
-            <div class="flex items-start">
-                <div class="flex items-center h-5">
-                    <input id="remember" type="checkbox" value=""
-                        class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                        required>
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-sm-12">
+            <div class="card w-75 card mt-4 mb-4 mx-auto">
+                <div class="card-header text-center">Vous avez déjà un compte ?
+                    <h5>CONNECTEZ-VOUS</h5>
                 </div>
-                <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Se souvenir de moi</label>
+                <div class="card-body">
+                    <form [formGroup]="connexionForm" (submit)="connexion()">
+                        <div class="form-group mt-2">
+                            <label for="email"> Votre email 📧:</label>
+                            <input type="email" class="form-control" id="email" formControlName="mail" required formControlName="email"/>
+                        </div>
+                        <div class="form-group mt-4">
+                            <label for="password">Votre mot de passe:</label>
+                            <input type="password" class="form-control" id="password" placeholder="••••••••" formControlName="password"
+                                required formControlName="motdepasse"> 
+                        </div>
+                        
+                            <div class="form-group form-check mt-3">
+                                <input type="checkbox" class="form-check-input" id="remember">
+                                <label class="form-check-label" for="remember">Se souvenir de moi</label>
+                            </div>
+                        <div class="d-flex justify-content-center">
+                            <button type="submit" class="btn btn-primary mt-5" [disabled]="!connexionForm.valid">
+                                Connectez-vous à votre compte
+                            </button>
+                        </div> 
+                        <div class="d-flex justify-content-center mt-2">
+                            <div class="text-sm font-medium text-muted mt-2">
+                                Pas enregistré ? <a href="#" class="text-primary" [routerLink]="'/inscription'">Créer un compte</a>
+                            </div>
+                        </div>
+                         </form>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Mot de passe oublié ?</a>
         </div>
-        <button type="submit"
-            class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Connectez vous à votre compte</button>
-        <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-            Pas enregistré ? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500" [routerLink]="'/inscription'">Créer un compte</a>
-        </div>
-    </form>
-</div>
-</div>
+    </div>
+
+
+

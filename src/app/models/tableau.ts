@@ -1,6 +1,7 @@
 export interface Tableau {
-  id: number;
+  id?: number;
   nom: string;
   dimension: string;
-  image: string;
+  id_image: number;
+
 }

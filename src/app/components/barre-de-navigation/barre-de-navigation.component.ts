@@ -17,7 +17,6 @@ export class BarreDeNavigationComponent {
 
   ngOnInit(): void {
     this.prenom = localStorage.getItem('prenom')!;
-    // 2 - même chose avec administrateur du localstorage
     const isAdminValue = localStorage.getItem('administrateur'); 
     this.isAdmin = isAdminValue === 'true';
   }

@@ -17,18 +17,18 @@ export class TableauService {
     return this.http.get<Tableau[]>(`http://localhost:3000/api/tableau/${id}`)
   }
 
-  deleteTableau(tableauId: number): Observable<void> {
-    const url = `http://localhost:3000/tableau/${tableauId}`;
-    return this.http.delete<void>(url);
+  deleteTableau(tableauId: number): Observable<Tableau> {
+    const url = `http://localhost:3000/api/tableau/${tableauId}`;
+    return this.http.delete<Tableau>(url);
   }
 
-  updateTableau(tableauId: number, updateTableau: Tableau): Observable<void> {
-    const url = `http://localhost:3000/tableau/${tableauId}`;
-    return this.http.put<void>(url, updateTableau);
+  updateTableau(tableauId: number, updateTableau: Tableau): Observable<Tableau> {
+    const url = `http://localhost:3000/api/tableau/${tableauId}`;
+    return this.http.patch<Tableau>(url, updateTableau);
   }
 
-  createTableau(tableau: Tableau): Observable<Tableau> {
-    const url = `http://localhost:3000/tableau`;
+  ajouterTableau(tableau: Tableau): Observable<Tableau> {
+    const url = `http://localhost:3000/api/tableau`;
     return this.http.post<Tableau>(url, tableau);
 }
 }

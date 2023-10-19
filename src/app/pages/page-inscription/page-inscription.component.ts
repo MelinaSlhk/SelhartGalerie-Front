@@ -31,17 +31,20 @@ export class PageInscriptionComponent {
   }
 
   ngOnInit() {
+    this.initialForm();
     // alert('coucou');
     // à l initialisation de...
-    this.inscriptionForm = this.formBuilder.group({
-      nom: ['', [Validators.required, Validators.minLength(2)]],
-      prenom: ['', [Validators.required, Validators.minLength(2)]],
-      email: ['', [Validators.required, Validators.email]],
-      motDePasse: ['', [Validators.required, Validators.minLength(5)]],
-      motDePasseConf: ['', [Validators.required, Validators.minLength(5)]],
-    });
-  }
-
+    
+    };
+  
+initialForm(){this.inscriptionForm = this.formBuilder.group({
+  nom: ['', [Validators.required, Validators.minLength(2)]],
+  prenom: ['', [Validators.required, Validators.minLength(2)]],
+  email: ['', [Validators.required, Validators.email]],
+  motDePasse: ['', [Validators.required, Validators.minLength(5)]],
+  motDePasseConf: ['', [Validators.required, Validators.minLength(5)]],
+});}
+      
   inscription() {
     // alert('coucou');
     if (this.inscriptionForm) {
@@ -62,3 +65,4 @@ export class PageInscriptionComponent {
     }
   }
 }
+

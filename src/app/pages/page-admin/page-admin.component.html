@@ -13,7 +13,7 @@
     </thead>
 
        <tbody>
-            <tr *ngFor="let tableau of tableaux; let i = index">
+            <tr *ngFor="let tableau of tableaux" [id]="tableau.id">
                 <td>
                     <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.nom" type="text" />
         
@@ -27,33 +27,24 @@
                 </td>
             
                 <td>
-                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.image" type="text" />
+                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.id_image" type="text" />
         
-                    {{ !isEditing ? tableau.image : "" }}
+                    {{ !isEditing ? tableau.id_image : "" }}
                 </td>
         
                 <td>
-                    <button class="edit-btn" (click)="modifierTableau(tableau.id)">Modifier</button>
+                    <button class="edit-btn" (click)="modifierTableau()">Modifier</button>
         
-                    <button class="delete-btn" (click)="supprimerTableau(tableau.id, i)">
+                    <button class="delete-btn" (click)="tableau.id !== undefined ? supprimerTableau(tableau.id) : null">
                         Supprimer
                     </button>
         
                     <button class="confirm-btn" *ngIf="isEditing"
-                        (click)="confirmerChangements(tableau.id, tableau.nom, tableau.dimension, tableau.image)">
+                        (click)="tableau.id !== undefined ? confirmerChangements(tableau.id, tableau.nom, tableau.dimension, tableau.id_image) : null">
                         Confirmer
                     </button>
                 </td>
             </tr>
         </tbody>
     </table>
-    <!-- <tr *ngFor="let tableau of tableaux; let i = index">
-        <td>{{ tableau.nom }}</td>
-        <td>{{ tableau.dimension }}</td>
-        <td>
-            <button class="edit-btn" (click)="modifierTableau(tableau)">Modifier</button>
-            <button class="delete-btn" (click)="supprimerTableau(i)">Supprimer</button>
-        </td>
-    </tr> -->
-        
-
+    

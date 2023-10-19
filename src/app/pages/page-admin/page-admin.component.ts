@@ -8,21 +8,21 @@ import { TableauService } from 'src/app/services/tableau.service';
   styleUrls: ['./page-admin.component.css'],
 })
 export class PageAdminComponent {
-  tableaux: Tableau[] = [];
+  tableaux!: Tableau[];
   isEditing = false;
+  tableauId!: number;
   // isAdmin = true;
 
   constructor(private tableauService: TableauService) {}
 
   ngOnInit(): void {
-    this.tableauService.getTableaux().subscribe((data: Tableau[]) => {
-      this.tableaux = data;
+    this.tableauService.getTableaux().subscribe({
+      next: (response)  => {{
+      this.tableaux = [...response];
       console.log(this.tableaux);
-      
-    });
-  }
-
-  modifierTableau(index: number) {
+}}})};
+ 
+  modifierTableau() {
     this.isEditing = !this.isEditing;
   }
 
@@ -30,39 +30,39 @@ export class PageAdminComponent {
 
   // ajouterTableau(tableau: Tableau) {}
 
-  supprimerTableau(id: number, index: number) {
-   const plantId = id;
-   const tableauId = id;
-   
-   this.tableauService.deleteTableau(tableauId).subscribe(() => {
-     this.tableaux.splice(index, 1);
-   });
+  supprimerTableau(id: number) {
+    const tableauId = id;
+
+    this.tableauService.deleteTableau(tableauId).subscribe(() => {
+      //  this.tableaux.splice(index, 1);
+    });
     // if (confirm('Êtes-vous sûr de vouloir supprimer ce tableau ?')) {
     //   this.tableaux.splice(index, 1);
     // }
   }
 
-  confirmerChangements(id: number, nom: string, dimension: string, image: string) {
+  confirmerChangements(
+    id: number,
+    nom: string,
+    dimension: string,
+    id_image: number
+  ) {
     this.isEditing = false;
-    const tableauId = id;
+    this.tableauId = id;
     const updateTableau: Tableau = {
-      id: id,
       nom: nom,
       dimension: dimension,
-      image: image,
+      id_image: id_image,
     };
-    this.tableauService.updateTableau(tableauId, updateTableau).subscribe(() => {
-      console.log('Mise à jour effectuée');
+    this.tableauService
+      .updateTableau(this.tableauId, updateTableau)
+      .subscribe(() => {
+        console.log('Mise à jour effectuée');
+      });
 
-    });
-
-  // modifierTableau(tableau: Tableau) {
-  //   this.tableauEnEdition = { ...tableau };
-  // }
-
+    // modifierTableau(tableau: Tableau) {
+    //   this.tableauEnEdition = { ...tableau };
+    // }
   }
 }
-
-
-
-  
+ 

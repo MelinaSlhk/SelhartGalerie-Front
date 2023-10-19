@@ -1,1 +1,31 @@
-<p>ajouter-tableau works!</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <h2>Ajouter un Tableau</h2>
+                </div>
+                <div class="card-body">
+                    <form (ngSubmit)="ajouterTableau()" [formGroup]="ajouterTableauForm" enctype="multipart/form-data">
+                        <div class="mb-4">
+                            <label for="nom" class="form-label mb-0">Nom du Tableau</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Entrez le nom"
+                                formControlName="nom" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="dimension" class="form-label mb-0">Dimension du Tableau</label>
+                            <input type="text" class="form-control" id="dimension" placeholder="Entrez les dimensions"
+                                formControlName="dimension" required>
+                        </div>
+                        <div class="mb-5">
+                            <label for="image" class="form-label mb-1">Image du Tableau en chiffre de 1 à 17(id) en attendant le blob</label>
+                            <input type="text" class="form-control" id="image" formControlName="image"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Ajouter le Tableau</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
