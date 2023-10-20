@@ -34,11 +34,8 @@ export class PageAdminComponent {
     const tableauId = id;
 
     this.tableauService.deleteTableau(tableauId).subscribe(() => {
-      //  this.tableaux.splice(index, 1);
     });
-    // if (confirm('Êtes-vous sûr de vouloir supprimer ce tableau ?')) {
-    //   this.tableaux.splice(index, 1);
-    // }
+    return alert('Tableau supprimé');
   }
 
   confirmerChangements(
@@ -59,10 +56,6 @@ export class PageAdminComponent {
       .subscribe(() => {
         console.log('Mise à jour effectuée');
       });
-
-    // modifierTableau(tableau: Tableau) {
-    //   this.tableauEnEdition = { ...tableau };
-    // }
   }
 }
  

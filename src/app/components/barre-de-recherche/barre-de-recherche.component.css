@@ -1,11 +1,16 @@
 .custom-search-bar {
     max-width: 20%;
     margin-bottom: 3%;
+    border: 2px solid transparent;
+    border-image: linear-gradient(45deg, #83E8BA, #cbc5ea);
+    border-image-slice: 1;
+    border-radius: 5px;
+    background: transparent;
 }
 
 .custom-search-bar button.btn-outline-success:hover {
-    background-color: #4E888F;
+    background-color: #83E8BA;
     border-color: #4E888F;
-    color: #fff; /* Couleur du texte */
+    color: #fff;
 }
 

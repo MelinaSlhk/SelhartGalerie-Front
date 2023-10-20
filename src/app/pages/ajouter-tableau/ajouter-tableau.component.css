@@ -1,0 +1,22 @@
+body {
+    background: linear-gradient(to right, #f000b5 10%, #05e10b 90%);
+}
+
+.card {
+    margin-top: 10%;
+    margin-bottom: 10%; 
+    background: #36a9f6;
+}
+.custom-button {
+    background: linear-gradient(to left, #72eb76, #df64c0);
+    border: #63888d solid 1px;
+    color: #1c0913; 
+    transition: background-color 0.3s; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-button:hover {
+    background: linear-gradient(to left, #cbc5ea, #83e8ba); 
+     transform: scale(1.05);
+     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}

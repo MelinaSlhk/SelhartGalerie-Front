@@ -1,9 +1,10 @@
-<div class="container mt-5">
+<body>
+<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header text-center">
-                    <h2>Ajouter un Tableau</h2>
+                    <h1>Ajouter un Tableau</h1>
                 </div>
                 <div class="card-body">
                     <form (ngSubmit)="ajouterTableau()" [formGroup]="ajouterTableauForm" enctype="multipart/form-data">
@@ -22,10 +23,13 @@
                             <input type="text" class="form-control" id="image" formControlName="image"
                                 required>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Ajouter le Tableau</button>
+                        <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary w-auto custom-button">Ajouter le Tableau</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</body>
