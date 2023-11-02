@@ -22,12 +22,12 @@ export class TableauService {
     return this.http.delete<Tableau>(url);
   }
 
-  updateTableau(tableauId: number, updateTableau: Tableau): Observable<Tableau> {
+  updateTableau(tableauId: number, updateTableau: Partial<Tableau>): Observable<Tableau> {
     const url = `http://localhost:3000/api/tableau/${tableauId}`;
     return this.http.patch<Tableau>(url, updateTableau);
   }
 
-  ajouterTableau(tableau: Tableau): Observable<Tableau> {
+  ajouterTableau(tableau: Partial<Tableau>): Observable<Tableau> {
     const url = `http://localhost:3000/api/tableau`;
     return this.http.post<Tableau>(url, tableau);
 }

@@ -3,5 +3,5 @@ export interface Tableau {
   nom: string;
   dimension: string;
   id_image: number;
-
+  image: any;
 }

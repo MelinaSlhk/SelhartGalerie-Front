@@ -17,6 +17,7 @@ import { BarreDeRechercheComponent } from './components/barre-de-recherche/barre
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/card/card.component';
 import { AjouterTableauComponent } from './pages/ajouter-tableau/ajouter-tableau.component';
+import { BlobBoutonComponent } from './components/blob-bouton/blob-bouton.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AjouterTableauComponent } from './pages/ajouter-tableau/ajouter-tableau
     FooterComponent,
     CardComponent,
     AjouterTableauComponent,
+    BlobBoutonComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,6 @@
 <app-barre-de-recherche></app-barre-de-recherche>
-<app-card></app-card>
+<app-card *ngFor="let tableau of tableaux" [tableau] = "tableau">
+
+</app-card>
+<app-blob-bouton></app-blob-bouton>
 

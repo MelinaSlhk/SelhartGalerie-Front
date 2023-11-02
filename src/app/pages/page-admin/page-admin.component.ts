@@ -46,7 +46,7 @@ export class PageAdminComponent {
   ) {
     this.isEditing = false;
     this.tableauId = id;
-    const updateTableau: Tableau = {
+    const updateTableau: Partial<Tableau> = {
       nom: nom,
       dimension: dimension,
       id_image: id_image,

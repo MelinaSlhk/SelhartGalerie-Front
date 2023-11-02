@@ -40,7 +40,7 @@ export class AjouterTableauComponent {
 
   ajouterTableau() {
     if (this.ajouterTableauForm.valid) {
-      const data: Tableau = {
+      const data: Partial<Tableau> = {
         // id: this.ajouterTableauForm.get('id')?.value,
         nom: this.ajouterTableauForm.get('nom')?.value,
         dimension: this.ajouterTableauForm.get('dimension')?.value,
