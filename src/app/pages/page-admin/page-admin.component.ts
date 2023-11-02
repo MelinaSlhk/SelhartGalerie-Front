@@ -11,8 +11,7 @@ export class PageAdminComponent {
   tableaux!: Tableau[];
   isEditing = false;
   tableauId!: number;
-  // isAdmin = true;
-
+  
   constructor(private tableauService: TableauService) {}
 
   ngOnInit(): void {
@@ -48,8 +47,8 @@ export class PageAdminComponent {
     this.tableauId = id;
     const updateTableau: Partial<Tableau> = {
       nom: nom,
-      dimension: dimension,
-      id_image: id_image,
+      // dimension: dimension,
+      // id_image: id_image,
     };
     this.tableauService
       .updateTableau(this.tableauId, updateTableau)

@@ -13,15 +13,18 @@
                             <input type="text" class="form-control" id="nom" placeholder="Entrez le nom"
                                 formControlName="nom" required>
                         </div>
-                        <div class="mb-4">
+                        <div class="mb-5">
                             <label for="dimension" class="form-label mb-0">Dimension du Tableau</label>
                             <input type="text" class="form-control" id="dimension" placeholder="Entrez les dimensions"
                                 formControlName="dimension" required>
                         </div>
-                        <div class="mb-5">
-                            <label for="image" class="form-label mb-1">Image du Tableau en chiffre de 1 à 17(id) en attendant le blob</label>
-                            <input type="text" class="form-control" id="image" formControlName="image"
-                                required>
+                            <div class="mb-4">
+                            <div class="mb-5">
+                                <label for="image" class="custom-file-upload">
+                                    <i class="fas fa-cloud-download-alt"></i> Télécharger le tableau
+                                </label>
+                                <input type="file" id="image" formControlName="image" (change)="onChange($event)" required>
+                            </div>
                         </div>
                         <div class="d-flex justify-content-center">
                         <button type="submit" class="btn btn-primary w-auto custom-button">Ajouter le Tableau</button>

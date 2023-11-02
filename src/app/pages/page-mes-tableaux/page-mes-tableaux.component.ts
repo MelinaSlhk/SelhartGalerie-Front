@@ -8,7 +8,7 @@ import { TableauService } from 'src/app/services/tableau.service';
   styleUrls: ['./page-mes-tableaux.component.css'],
 })
 export class PageMesTableauxComponent {
-  tableaux!: Tableau[];
+  tableaux: Tableau[] = [];
   tableauId!: number;
 
   constructor(private tableauService: TableauService) {}

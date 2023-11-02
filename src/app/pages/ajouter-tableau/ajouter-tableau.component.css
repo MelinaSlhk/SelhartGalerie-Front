@@ -5,7 +5,7 @@ body {
 .card {
     margin-top: 10%;
     margin-bottom: 10%; 
-    background: #36a9f6;
+    background: #c433e8;
 }
 .custom-button {
     background: linear-gradient(to left, #72eb76, #df64c0);
@@ -19,4 +19,17 @@ body {
     background: linear-gradient(to left, #cbc5ea, #83e8ba); 
      transform: scale(1.05);
      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.custom-file-upload {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+}
+
+#image {
+display: none;
 }

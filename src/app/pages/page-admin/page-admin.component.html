@@ -5,7 +5,7 @@
 <div class="text-center mt-3 mb-5">
 <button type="button" class="btn btn-outline-success btn-lg custom-button" [routerLink]="'/ajouter-tableau'">Ajouter un tableau</button>
 </div>
-
+<div class="table-responsive">
 <table class="modern-table">
     <thead>
         <tr>
@@ -17,7 +17,7 @@
     </thead>
 
        <tbody>
-            <tr *ngFor="let tableau of tableaux" [id]="tableau.id">
+            <tr class="color" *ngFor="let tableau of tableaux" [id]="tableau.id">
                 <td>
                     <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.nom" type="text" />
         
@@ -25,15 +25,13 @@
                 </td>
         
                 <td>
-                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.dimension" type="text" />
+                    {{tableau.dimension}}
         
-                    {{ !isEditing ? tableau.dimension : "" }}
                 </td>
             
                 <td>
-                    <input class="input-field" *ngIf="isEditing" [(ngModel)]="tableau.id_image" type="text" />
+                    {{tableau.id_image}} 
         
-                    {{ !isEditing ? tableau.id_image : "" }}
                 </td>
         
                 <td>
@@ -51,5 +49,6 @@
             </tr>
         </tbody>
     </table>
+</div>
 </div>
    </body> 

@@ -21,7 +21,7 @@ export class CardComponent {
 
   ngOnInit() {
     if (this.tableau && this.tableau.image) {
-      const IdTableau = this.tableau.id;
+      const IdTableau = this.tableau.id_image;
       this.imageService.getImageById(IdTableau!).subscribe({
         next: (data: Blob) => {
           this.tableauBlob = data;
