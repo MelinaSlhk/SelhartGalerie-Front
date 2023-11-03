@@ -38,10 +38,14 @@ export class PageConnexionComponent implements OnInit {
        console.log(response);
        
         localStorage.setItem('accesstoken', response.accessToken);
-        localStorage.setItem('prenom', response.utilisateur.prenom);
+        // localStorage.setItem('prenom', response.utilisateur.prenom);
         const isAdmin = response.utilisateur.administrateur ? 'true' : 'false';
-        localStorage.setItem('administrateur', isAdmin);
-
+        // localStorage.setItem('administrateur', isAdmin);
+        this.authService.isConnected$.next(true);
+        this.authService.prenom$.next(response.utilisateur.prenom);
+        if (isAdmin) { 
+          this.authService.isAdmin$.next(true);
+        }
         this.router.navigate(['/accueil']);
         // location.reload();
         }

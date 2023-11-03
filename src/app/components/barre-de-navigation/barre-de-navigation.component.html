@@ -31,13 +31,13 @@
     <!-- Icône de connexion -->
     <i class="fas fa-regular fa-user" style="margin-right: 10px;"></i>
   
-    <ng-container *ngIf="prenom">
+    <ng-container *ngIf="afficherDeconnexion">
       <p class="center">{{prenom}}</p>
       <a class="nav-link" [routerLink]="'/mon-compte'">Mon Compte</a>
       <a class="nav-link" href="javascript:void(0);" (click)="logout()">Déconnexion</a>
     </ng-container>
   
-    <ng-container *ngIf="!prenom">
+    <ng-container *ngIf="!afficherDeconnexion">
       <a class="nav-link" [routerLink]="'/connexion'">Connexion</a>
     </ng-container>
   </div>

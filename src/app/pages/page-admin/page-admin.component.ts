@@ -11,16 +11,21 @@ export class PageAdminComponent {
   tableaux!: Tableau[];
   isEditing = false;
   tableauId!: number;
-  
+
   constructor(private tableauService: TableauService) {}
 
   ngOnInit(): void {
     this.tableauService.getTableaux().subscribe({
-      next: (response)  => {{
-      this.tableaux = [...response];
-      console.log(this.tableaux);
-}}})};
- 
+      next: (response) => {
+        {
+          this.tableaux = [...response];
+          console.log(this.tableaux);
+        }
+      },
+    });
+  }
+
+  
   modifierTableau() {
     this.isEditing = !this.isEditing;
   }
@@ -32,9 +37,9 @@ export class PageAdminComponent {
   supprimerTableau(id: number) {
     const tableauId = id;
 
-    this.tableauService.deleteTableau(tableauId).subscribe(() => {
-    });
-    return alert('Tableau supprimé');
+    this.tableauService.deleteTableau(tableauId).subscribe(() => {});
+   
+     return alert('Tableau supprimé');
   }
 
   confirmerChangements(
