@@ -8,9 +8,9 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
   styleUrls: ['./barre-de-navigation.component.css'],
 })
 export class BarreDeNavigationComponent {
-  afficherDeconnexion!: boolean;
+  afficherDeconnexion!: string|null;
   prenom?: string;
-  isAdmin: boolean = false;
+  isAdmin!: string|null;
   constructor(
     private utilisateurService: UtilisateurService,
     private authService: AuthService
@@ -24,19 +24,20 @@ export class BarreDeNavigationComponent {
     this.authService.isConnected$.subscribe((resp) => {
       this.afficherDeconnexion = resp;
       console.log('afficherDeconnexion',this.afficherDeconnexion);
+    })
     this.authService.prenom$.subscribe((resp) => {
       this.prenom = resp!;
+    })
     this.authService.isAdmin$.subscribe((resp) => {
       this.isAdmin = resp;
-    })
-    })
       
     });
   }
 
   logout() {
     this.authService.logout();
-    this.authService.isConnected$.next(false);
+    this.authService.isConnected$.next('');
+    this.authService.isAdmin$.next('');
   }
 }
 

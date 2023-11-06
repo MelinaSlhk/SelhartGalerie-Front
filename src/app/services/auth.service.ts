@@ -9,11 +9,12 @@ import { Utilisateur } from '../models/utilisateur';
   providedIn: 'root',
 })
 export class AuthService {
-  
-  public prenom$ = new BehaviorSubject(null);
-  public isConnected$ = new BehaviorSubject(false);
-  public isAdmin$ = new BehaviorSubject(false);
-  
+  public prenom$ = new BehaviorSubject(localStorage.getItem('prenom'));
+  public isConnected$ = new BehaviorSubject(
+    localStorage.getItem('accesstoken')
+  );
+  public isAdmin$ = new BehaviorSubject(localStorage.getItem('administrateur'));
+
   constructor(private http: HttpClient, private router: Router) {
     // const token = localStorage.getItem('token');
     // if (token) {
@@ -25,7 +26,7 @@ export class AuthService {
 
   connexion(email: string, motdepasse: string): Observable<Connexion> {
     const body = { email: email, motdepasse: motdepasse };
-    
+
     return this.http.post<Connexion>(
       `http://localhost:3000/api/auth/connexion`,
       body

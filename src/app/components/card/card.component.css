@@ -1,26 +1,18 @@
-/* body{
-  display:flex;
-  margin:0;
-  padding:0;
-  min-height: 100vh;
-  background: #444;
-  justify-content: center;
-  align-items: center;
-  font-family: arial;
-} */
-
 .container{
-  width: 1000px;
+  width: 400px;
   position: relative;
   display: flex;
-  justify-content: space-between;
   flex-wrap:wrap;
   margin-top: 7%;
-  
+  margin-left: 50%;
+ 
 }
 
 .container .card{
   position: relative;
+  width: 300px; 
+  margin-bottom: 20px; 
+  transition: 0.4s;
 }
 
 
@@ -55,7 +47,7 @@
 }
 
 .container .card .face.face1 .content{
-  opacity: .5;
+  opacity: 1;
   transition:  0.5s;
   text-align: center;
 }
@@ -117,4 +109,29 @@
   background: #333 ;
   color: whitesmoke; 
   box-shadow: inset 0px 0px 10px rgba(0,0,0,0.5);
+}
+
+.zoneAvis {
+  height: 50px;
+  overflow: auto;
+  background-color: white;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.nouvelAvis {
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+button{
+border-radius: 10px;
+width: 60%;
+}
+
+@media (max-width: 480px) {
+.container {
+  margin-left: 20px;
+  width: 360px;
+}
 }

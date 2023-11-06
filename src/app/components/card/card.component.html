@@ -9,7 +9,24 @@
             <div class="content">
                 <h5>{{tableau.nom}} </h5>
                 <p> {{tableau.dimension}} </p>
-                <a href="#" type="button">Avis</a>
+                <!-- <form (submit)="submitAvis(tableau.id)">
+                    <textarea [(ngModel)]="nouvelAvis" name="nouvelAvis" placeholder="Ajouter un avis"></textarea>
+                    <button type="submit">Envoyer</button>
+                </form> -->
+                
+                 <div *ngIf="avisList.length > 0" class="zoneAvis">
+                    <ul >
+                        <li *ngFor="let avis of avisList">{{avis.avis}}</li>
+                    </ul>
+                </div>
+                <form (submit)="submitAvis()">
+                    <div class="d-flex flex-column">
+                        <textarea class="nouvelAvis" [(ngModel)]="nouvelAvis" name="nouvelAvis" placeholder="Ajouter un avis"></textarea>
+                    <button type="submit">Envoyer</button>
+                    </div>
+                    
+                </form>
+  
             </div>
         </div>
     </div>
