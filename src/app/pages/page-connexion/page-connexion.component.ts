@@ -43,6 +43,8 @@ export class PageConnexionComponent implements OnInit {
         localStorage.setItem('administrateur', isAdmin);
         this.authService.isConnected$.next(localStorage.getItem('accesstoken'));
         this.authService.prenom$.next(response.utilisateur.prenom);
+        this.authService.idUtilisateur$.next(response.utilisateur.id);
+        localStorage.setItem('idUtilisateur', response.utilisateur.id);
        if (isAdmin){
         // récup la propriété administrateur
         // envoi via le suject 

@@ -9,6 +9,7 @@ import { TableauService } from 'src/app/services/tableau.service';
 })
 export class PageMesTableauxComponent {
   tableaux: Tableau[] = [];
+  tableauxFiltres: Tableau[] = [];
   tableauId!: number;
 
   constructor(private tableauService: TableauService) {}
@@ -18,9 +19,21 @@ export class PageMesTableauxComponent {
       next: (response) => {
         {
           this.tableaux = [...response];
+          this.tableauxFiltres = [...response]; // Initialisez la liste des tableaux filtrés
           console.log(this.tableaux);
         }
       },
     });
+  }
+  handleSearch(query: string) {
+    if (query) {
+      // Effectuez la recherche et filtrez les tableaux en fonction de la requête
+      this.tableauxFiltres = this.tableaux.filter((tableau) =>
+        tableau.nom.toLowerCase().includes(query.toLowerCase())
+      );
+    } else {
+      // Réinitialisez la liste des tableaux filtrés (affichez tous les tableaux)
+      this.tableauxFiltres = this.tableaux;
+    }
   }
 }

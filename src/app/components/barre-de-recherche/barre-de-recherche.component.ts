@@ -7,4 +7,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class BarreDeRechercheComponent {
   @Output() inputUtilisateur = new EventEmitter<string>();
+  searchTableaux(query: string) {
+    this.inputUtilisateur.emit(query);
+  }
 }

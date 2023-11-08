@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AvisDuTableau } from 'src/app/models/avisDuTableau';
 import { Tableau } from 'src/app/models/tableau';
+import { Utilisateur } from 'src/app/models/utilisateur';
 import { ImageService } from 'src/app/services/image.service';
 import { TableauService } from 'src/app/services/tableau.service';
+import { UtilisateurService } from 'src/app/services/utilisateur.service';
 
 @Component({
   selector: 'app-card',
@@ -12,20 +14,38 @@ import { TableauService } from 'src/app/services/tableau.service';
 })
 export class CardComponent implements OnInit {
   @Input() tableau!: Tableau;
-
   tableauBlob!: Blob;
   tableauImage!: any;
   estFavori: boolean = false;
+  utilisateur!: Utilisateur;
+
   nouvelAvis = ''; // saisir un nvel avis
   avisList: AvisDuTableau[] = []; // Liste des avis
 
   constructor(
     private route: ActivatedRoute,
     private imageService: ImageService,
-    private tableauService: TableauService
+    private tableauService: TableauService,
+    private utilisateurService: UtilisateurService,
   ) {}
 
   ngOnInit() {
+    const idUtilisateur = localStorage.getItem('idUtilisateur');
+    if (idUtilisateur) {
+      // Chargez les favoris de l'utilisateur actuel et mettez à jour estFavori en conséquence
+      this.utilisateurService
+        .getUtilisateurById(+idUtilisateur)
+        .subscribe((utilisateur) => {
+          this.utilisateur = utilisateur;
+          if (this.tableau.id) {
+            this.estFavori = this.isDansLesFavoris(
+              this.utilisateur.tableauxFavoris,
+              this.tableau.id
+            );
+          }
+        });
+    }
+
     if (this.tableau && this.tableau.image) {
       const IdTableau = this.tableau.id_image;
       this.imageService.getImageById(IdTableau!).subscribe({
@@ -47,15 +67,42 @@ export class CardComponent implements OnInit {
     });
   }
 
-  ajouterAuxFavoris() {
-    // Vous pouvez ici envoyer une requête au backend pour gérer l'ajout/la suppression des favoris
-    // Vous devez également mettre à jour le statut "estFavori" en fonction de l'état actuel du tableau
-    // Si le tableau est déjà en favori, vous pouvez le supprimer des favoris, sinon, l'ajouter.
-
-    // Pour cette démo, nous allons simplement basculer le statut "estFavori" pour l'exemple.
-    this.estFavori = !this.estFavori;
+  // Méthode pour vérifier si un tableau est dans les favoris
+  isDansLesFavoris(favoris: Tableau[], tableauId: number): boolean {
+    // Vous pouvez implémenter cette méthode en vérifiant si le tableau est dans la liste des favoris
+    return favoris.some((favori) => favori.id === tableauId);
   }
-  
+
+  // Méthode pour ajouter ou supprimer un tableau des favoris
+  ajouterAuxFavoris() {
+    const utilisateurId = this.utilisateur.id; // Assurez-vous d'avoir l'ID de l'utilisateur
+    const tableauId = this.tableau.id;
+
+    if (this.estFavori) {
+      // Le tableau est dans les favoris, supprimez-le
+      (this.utilisateur.tableauxFavoris =
+        this.utilisateur.tableauxFavoris.filter((t) => t.id !== tableauId)),
+        this.utilisateurService
+          .updateUtilisateur(this.utilisateur)
+          .subscribe(() => {
+            this.estFavori = false;
+          });
+    } else {
+      // Le tableau n'est pas dans les favoris, ajoutez-le
+      this.utilisateur.tableauxFavoris = [
+        ...this.utilisateur.tableauxFavoris,
+        this.tableau,
+      ];
+
+      this.utilisateurService
+        .updateUtilisateur(this.utilisateur)
+        .subscribe(() => {
+          this.estFavori = true;
+          
+        });
+    }
+  }
+
   // Fonction pour soumettre un nouvel avis
   submitAvis() {
     if (this.nouvelAvis) {
@@ -81,4 +128,3 @@ export class CardComponent implements OnInit {
       });
   }
 }
-

@@ -1,6 +1,7 @@
 import { Tableau } from "./tableau";
 
 export interface Utilisateur {
+  id: number,
   prenom: string;
   nom: string;
   email: string;

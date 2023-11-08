@@ -10,6 +10,7 @@ import { Utilisateur } from '../models/utilisateur';
 })
 export class AuthService {
   public prenom$ = new BehaviorSubject(localStorage.getItem('prenom'));
+  public idUtilisateur$ = new BehaviorSubject(localStorage.getItem('idUtilisateur'));
   public isConnected$ = new BehaviorSubject(
     localStorage.getItem('accesstoken')
   );
