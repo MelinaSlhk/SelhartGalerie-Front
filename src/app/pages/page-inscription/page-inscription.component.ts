@@ -48,7 +48,7 @@ initialForm(){this.inscriptionForm = this.formBuilder.group({
   inscription() {
     // alert('coucou');
     if (this.inscriptionForm) {
-      const data: Utilisateur = {
+      const data: Partial<Utilisateur> = {
         nom: this.inscriptionForm.get('nom')?.value,
         prenom: this.inscriptionForm.get('prenom')?.value,
         email: this.inscriptionForm.get('email')?.value,

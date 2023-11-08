@@ -44,6 +44,8 @@ export class PageConnexionComponent implements OnInit {
         this.authService.isConnected$.next(localStorage.getItem('accesstoken'));
         this.authService.prenom$.next(response.utilisateur.prenom);
        if (isAdmin){
+        // récup la propriété administrateur
+        // envoi via le suject 
         this.authService.isAdmin$.next(localStorage.getItem('administrateur')!);
        }
         this.router.navigate(['/accueil']);

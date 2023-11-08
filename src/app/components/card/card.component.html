@@ -4,15 +4,14 @@
             <div class="content">
               <img [src]="tableauImage" class="img-fluid">
             </div>
+            <button (click)="ajouterAuxFavoris()" class="favoris-button">
+                <i [class]="estFavori ? 'fas fa-heart' : 'far fa-heart'"></i>
+            </button>
         </div>
         <div class="face face2">
             <div class="content">
                 <h5>{{tableau.nom}} </h5>
                 <p> {{tableau.dimension}} </p>
-                <!-- <form (submit)="submitAvis(tableau.id)">
-                    <textarea [(ngModel)]="nouvelAvis" name="nouvelAvis" placeholder="Ajouter un avis"></textarea>
-                    <button type="submit">Envoyer</button>
-                </form> -->
                 
                  <div *ngIf="avisList.length > 0" class="zoneAvis">
                     <ul >
@@ -24,7 +23,6 @@
                         <textarea class="nouvelAvis" [(ngModel)]="nouvelAvis" name="nouvelAvis" placeholder="Ajouter un avis"></textarea>
                     <button type="submit">Envoyer</button>
                     </div>
-                    
                 </form>
   
             </div>

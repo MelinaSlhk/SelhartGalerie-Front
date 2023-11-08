@@ -10,7 +10,7 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 export class BarreDeNavigationComponent {
   afficherDeconnexion!: string|null;
   prenom?: string;
-  isAdmin!: string|null;
+  isAdmin: boolean = false;
   constructor(
     private utilisateurService: UtilisateurService,
     private authService: AuthService
@@ -28,8 +28,9 @@ export class BarreDeNavigationComponent {
     this.authService.prenom$.subscribe((resp) => {
       this.prenom = resp!;
     })
+    // reçoit le type de l administarteur
     this.authService.isAdmin$.subscribe((resp) => {
-      this.isAdmin = resp;
+      this.isAdmin = resp?.toString() === 'true';
       
     });
   }

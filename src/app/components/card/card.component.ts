@@ -15,6 +15,7 @@ export class CardComponent implements OnInit {
 
   tableauBlob!: Blob;
   tableauImage!: any;
+  estFavori: boolean = false;
   nouvelAvis = ''; // saisir un nvel avis
   avisList: AvisDuTableau[] = []; // Liste des avis
 
@@ -35,8 +36,7 @@ export class CardComponent implements OnInit {
       });
     }
     // Chargez la liste des avis pour ce tableau
-    // this.loadAvisList(this.tableau.id);
- this.loadAvisList();
+    this.loadAvisList();
   }
 
   createImageFromBlob(image: Blob) {
@@ -44,30 +44,41 @@ export class CardComponent implements OnInit {
     reader.readAsDataURL(image);
     reader.addEventListener('load', () => {
       this.tableauImage = reader.result;
-      // console.log(this.tableauImage);
     });
   }
-// Fonction pour soumettre un nouvel avis
+
+  ajouterAuxFavoris() {
+    // Vous pouvez ici envoyer une requête au backend pour gérer l'ajout/la suppression des favoris
+    // Vous devez également mettre à jour le statut "estFavori" en fonction de l'état actuel du tableau
+    // Si le tableau est déjà en favori, vous pouvez le supprimer des favoris, sinon, l'ajouter.
+
+    // Pour cette démo, nous allons simplement basculer le statut "estFavori" pour l'exemple.
+    this.estFavori = !this.estFavori;
+  }
+  
+  // Fonction pour soumettre un nouvel avis
   submitAvis() {
     if (this.nouvelAvis) {
       // Envoyer l'avis au service
-      this.tableauService.addAvis(this.tableau.id!, this.nouvelAvis).subscribe((response) => {
-        // Réinitialiser le champ de saisie de l'avis
-        this.nouvelAvis = '';
-        // Actualiser la liste des avis!
-        this.loadAvisList();
-      });
+      this.tableauService
+        .addAvis(this.tableau.id!, this.nouvelAvis)
+        .subscribe((response) => {
+          // Réinitialiser le champ de saisie de l'avis
+          this.nouvelAvis = '';
+          // Actualiser la liste des avis!
+          this.loadAvisList();
+        });
     }
   }
 
   // Chargez la liste des avis pour le tableau actuel
   loadAvisList() {
-        this.tableauService
-          .getAvisForTableau(this.tableau.id!)
-          .subscribe((data) => {
-            this.avisList = data.data;
-            console.log('tableau des avis ds card onInit', this.avisList);
-          });
+    this.tableauService
+      .getAvisForTableau(this.tableau.id!)
+      .subscribe((data) => {
+        this.avisList = data.data;
+        console.log('tableau des avis ds card onInit', this.avisList);
+      });
   }
 }
 

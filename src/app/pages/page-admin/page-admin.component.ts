@@ -37,7 +37,7 @@ export class PageAdminComponent {
   supprimerTableau(id: number) {
     const tableauId = id;
 
-    this.tableauService.deleteTableau(tableauId).subscribe(() => {});
+    this.tableauService.deleteTableau(tableauId).subscribe(() => {this.tableaux = this.tableaux.filter(tableau => tableau.id!== tableauId)});
    
      return alert('Tableau supprimé');
   }
@@ -52,8 +52,6 @@ export class PageAdminComponent {
     this.tableauId = id;
     const updateTableau: Partial<Tableau> = {
       nom: nom,
-      // dimension: dimension,
-      // id_image: id_image,
     };
     this.tableauService
       .updateTableau(this.tableauId, updateTableau)

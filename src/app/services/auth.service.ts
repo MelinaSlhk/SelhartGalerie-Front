@@ -33,7 +33,7 @@ export class AuthService {
     );
   }
 
-  inscription(utilisateur: Utilisateur) {
+  inscription(utilisateur: Partial<Utilisateur>) {
     return this.http.post(
       `http://localhost:3000/api/auth/inscription`,
       utilisateur

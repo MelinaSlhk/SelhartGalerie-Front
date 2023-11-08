@@ -25,15 +25,15 @@ export class TableauService {
   }
 
   getTableaux() {
-    return this.http.get<Tableau[]>('http://localhost:3000/api/tableau');
+    return this.http.get<Tableau[]>(`${this.baseUrl}/tableau`);
   }
 
   getTableauById(id: number) {
-    return this.http.get<Tableau[]>(`http://localhost:3000/api/tableau/${id}`);
+    return this.http.get<Tableau[]>(`${this.baseUrl}/tableau/${id}`);
   }
 
   deleteTableau(tableauId: number): Observable<Tableau> {
-    const url = `http://localhost:3000/api/tableau/${tableauId}`;
+    const url = `${this.baseUrl}/tableau/${tableauId}`;
     return this.http.delete<Tableau>(url);
   }
 
@@ -41,12 +41,12 @@ export class TableauService {
     tableauId: number,
     updateTableau: Partial<Tableau>
   ): Observable<Tableau> {
-    const url = `http://localhost:3000/api/tableau/${tableauId}`;
+    const url = `${this.baseUrl}/tableau/${tableauId}`;
     return this.http.patch<Tableau>(url, updateTableau);
   }
 
   ajouterTableau(tableau: Partial<Tableau>): Observable<Tableau> {
-    const url = `http://localhost:3000/api/tableau`;
+    const url = `${this.baseUrl}/tableau`;
     return this.http.post<Tableau>(url, tableau);
   }
 }
