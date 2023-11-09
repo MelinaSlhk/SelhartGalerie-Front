@@ -1,8 +1,8 @@
 <app-barre-de-recherche (inputUtilisateur)="handleSearch($event)"></app-barre-de-recherche>
-<div *ngFor="let tableau of tableauxFiltres">
+
 <div class="d-flex flex-row flex-wrap">
 <app-card *ngFor="let tableau of tableaux" [tableau] = "tableau">
 
 </app-card>
 </div>
-</div>
+

@@ -1,6 +1,6 @@
 <body>
     <div class="custom-page-background">
-<app-barre-de-recherche></app-barre-de-recherche>
+<app-barre-de-recherche (inputUtilisateur)="handleSearch($event)"></app-barre-de-recherche>
     
 <div class="text-center mt-3 mb-5">
 <button type="button" class="btn btn-outline-success btn-lg custom-button" [routerLink]="'/ajouter-tableau'">Ajouter un tableau</button>

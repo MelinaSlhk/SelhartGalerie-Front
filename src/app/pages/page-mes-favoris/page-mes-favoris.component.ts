@@ -10,6 +10,7 @@ import { UtilisateurService } from 'src/app/services/utilisateur.service';
 })
 export class PageMesFavorisComponent implements OnInit {
   favoris: Tableau[] = [];
+  allTableaux: Tableau[] = [];
   utilisateur!: Utilisateur;
 
   constructor(private utilisateurService: UtilisateurService) {}
@@ -18,12 +19,25 @@ export class PageMesFavorisComponent implements OnInit {
     // Récupérez l'utilisateur actuel depuis le service
     const idUtilisateur = localStorage.getItem('idUtilisateur');
     if (idUtilisateur) {
-      this.utilisateurService.getUtilisateurById(+idUtilisateur).subscribe((utilisateur) => {
-        this.utilisateur = utilisateur;
+      this.utilisateurService
+        .getUtilisateurById(+idUtilisateur)
+        .subscribe((utilisateur) => {
+          this.utilisateur = utilisateur;
 
-        // Récupérez la liste des tableaux favoris de l'utilisateur
-        this.favoris = this.utilisateur.tableauxFavoris;
-      });
+          // Récupérez la liste des tableaux favoris de l'utilisateur
+          this.favoris = this.utilisateur.tableauxFavoris;
+        });
+    }
   }
-}
+  handleSearch(query: string) {
+    if (query) {
+      // Effectuez la recherche et filtrez les tableaux en fonction de la requête
+      this.favoris = this.favoris.filter((tableau) =>
+        tableau.nom.toLowerCase().includes(query.toLowerCase())
+      );
+    } else {
+      // Réinitialisez la liste des tableaux filtrés (affichez tous les tableaux)
+      this.favoris = this.allTableaux;
+    }
+  }
 }
