@@ -30,7 +30,7 @@
                         formControlName="motDePasseConf">
                 </div>
                 <div class="mt-5 mb-3 text-center">
-                <button type="submit" class="btn btn-primary">Créer votre compte</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!inscriptionForm.valid">Créer votre compte</button>
                </div>
                 <p class="text-center mt-3">
                     Vous avez déjà un compte ? <a href="#" class="font-weight-medium text-primary"

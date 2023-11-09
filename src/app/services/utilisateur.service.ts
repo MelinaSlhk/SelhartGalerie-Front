@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Utilisateur } from '../models/utilisateur';
 import { Tableau } from '../models/tableau';
@@ -13,13 +13,22 @@ export class UtilisateurService {
   private baseUrl = 'http://localhost:3000/api';
 
   constructor(private http: HttpClient) {}
-
+  private getHttpOptions() {
+    const token = localStorage.getItem('accesstoken');
+    return {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
+    };
+  }
   getUtilisateur() {
     return this.http.get<Utilisateur>(`http://localhost:3000/api/utilisateur`);
   }
 
   getUtilisateurById(id: number) {
-    return this.http.get<Utilisateur>(`http://localhost:3000/api/utilisateur/${id}`);
+    return this.http.get<Utilisateur>(
+      `http://localhost:3000/api/utilisateur/${id}`
+    );
   }
 
   getTableaux() {
@@ -35,8 +44,13 @@ export class UtilisateurService {
   updateUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur> {
     return this.http.patch<Utilisateur>(
       `${this.baseUrl}/utilisateur/${utilisateur.id}`,
-      {tableauxFavoris: utilisateur.tableauxFavoris}
+      { tableauxFavoris: utilisateur.tableauxFavoris },
+      this.getHttpOptions()
     );
+  }
+
+  supprimerCompte(id: number) {
+    return this.http.delete(`${this.baseUrl}/utilisateur/${id}`, this.getHttpOptions());
   }
 }
 

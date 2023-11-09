@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Image } from '../models/image';
 
 @Injectable({
@@ -8,6 +8,14 @@ import { Image } from '../models/image';
 export class ImageService {
   constructor(private http: HttpClient) {}
 
+  private getHttpOptions() {
+    const token = localStorage.getItem('accesstoken');
+    return {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${token}`,
+      }),
+    };
+  }
   getImageById(id: number) {
     return this.http.get(`http://localhost:3000/api/image/${id}`, {
       responseType: 'blob',
@@ -15,7 +23,10 @@ export class ImageService {
   }
 
   postImage(formData: FormData) {
-   
-    return this.http.post('http://localhost:3000/api/image', formData);
+    return this.http.post(
+      'http://localhost:3000/api/image',
+      formData,
+      this.getHttpOptions()
+    );
   }
 }

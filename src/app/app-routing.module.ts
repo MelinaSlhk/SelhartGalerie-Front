@@ -10,18 +10,20 @@ import { PageMesFavorisComponent } from './pages/page-mes-favoris/page-mes-favor
 import { PageMonCompteComponent } from './pages/page-mon-compte/page-mon-compte.component';
 import { PageAdminComponent } from './pages/page-admin/page-admin.component';
 import { AjouterTableauComponent } from './pages/ajouter-tableau/ajouter-tableau.component';
+import { authGuard } from './guards/auth.guard';
+import { utilisateurGuard } from './guards/utilisateur.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
   { path: '', component: AppComponent },
-  { path: 'connexion', component: PageConnexionComponent }, // peut-etre modifier connexion en login
-  { path: 'inscription', component: PageInscriptionComponent }, // peut-etre modifier inscription en register
-  { path: 'accueil', component: PageAccueilComponent }, // peut-etre modifier accueil en home
+  { path: 'connexion', component: PageConnexionComponent },
+  { path: 'inscription', component: PageInscriptionComponent },
+  { path: 'accueil', component: PageAccueilComponent },
   { path: 'mes-tableaux', component: PageMesTableauxComponent },
-  { path: 'mes-favoris', component: PageMesFavorisComponent },
-  { path: 'mon-compte', component: PageMonCompteComponent },
-  { path: 'admin', component: PageAdminComponent },
-  { path: 'ajouter-tableau', component: AjouterTableauComponent },
+  { path: 'mes-favoris', component: PageMesFavorisComponent, canActivate: [utilisateurGuard] },
+  { path: 'mon-compte', component: PageMonCompteComponent, canActivate: [utilisateurGuard] },
+  { path: 'admin', component: PageAdminComponent, canActivate: [authGuard] },
+  { path: 'ajouter-tableau', component: AjouterTableauComponent, canActivate: [authGuard] },
   { path: '**', component: PageErreur404Component },
 ];
 
