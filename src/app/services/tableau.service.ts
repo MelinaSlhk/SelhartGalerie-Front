@@ -22,7 +22,7 @@ export class TableauService {
   // Ajouter un avis à un tableau
   addAvis(tableauId: number, avis: string): Observable<string> {
     const url = `${this.baseUrl}/avis/${tableauId}`;
-    return this.http.post<string>(url, avis, this.getHttpOptions() );
+    return this.http.post<string>(url, {avis}, this.getHttpOptions() );
   }
 
   // Récupérer les avis pour un tableau spécifique
