@@ -124,6 +124,7 @@ export class CardComponent implements OnInit {
       .getAvisForTableau(this.tableau.id!)
       .subscribe((data) => {
         this.avisList = data.data;
+        this.avisList.sort((a, b) => b.id - a.id);
         console.log('tableau des avis ds card onInit', this.avisList);
       });
   }

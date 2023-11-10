@@ -13,13 +13,14 @@
                 
                  <div *ngIf="avisList.length > 0" class="zoneAvis">
                     <ul >
-                        <li *ngFor="let avis of avisList">{{avis.avis}}</li>
+                        <li *ngFor="let avis of avisList"><span *ngIf="avis.utilisateur">
+                            <strong>L'avis de {{avis.utilisateur!.prenom}} :</strong> {{avis.avis}}</span></li>
                     </ul>
                 </div>
                 <form (submit)="submitAvis()">
                     <div class="d-flex flex-column">
                         <textarea class="nouvelAvis" [(ngModel)]="nouvelAvis" name="nouvelAvis" placeholder="Ajouter un avis"></textarea>
-                    <button type="submit">Envoyer</button>
+                    <button class="go-button" type="submit">Envoyer</button>
                     </div>
                 </form>
                 <button (click)="ajouterAuxFavoris()" class="favoris-button">
