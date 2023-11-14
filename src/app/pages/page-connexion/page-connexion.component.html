@@ -1,4 +1,4 @@
-<div class="container mt-5 mb-5">
+<div class="custom-page-background">
     <div class="row justify-content-center">
         <div class="col-md-6 col-sm-12">
             <div class="card w-75 card mt-4 mb-4 mx-auto">
@@ -15,12 +15,7 @@
                             <label for="password">Votre mot de passe:</label>
                             <input type="password" class="form-control" id="password" placeholder="••••••••" formControlName="password"
                                 required formControlName="motdepasse"> 
-                        </div>
-                        
-                            <div class="form-group form-check mt-3">
-                                <input type="checkbox" class="form-check-input" id="remember">
-                                <label class="form-check-label" for="remember">Se souvenir de moi</label>
-                            </div>
+                        </div>                 
                         <div class="d-flex justify-content-center">
                             <button type="submit" class="btn btn-primary mt-5 custom-button" [disabled]="!connexionForm.valid">
                                 Connectez-vous à votre compte
@@ -37,6 +32,5 @@
             </div>
         </div>
     </div>
-
 
 

@@ -3,7 +3,6 @@
     margin-bottom: 3%;
     margin-left: 5px;
     border: 2px solid transparent;
-    /* border-image: linear-gradient(45deg, #83E8BA, #cbc5ea); */
     border-image-slice: 1;
     border-radius: 5px;
     background: transparent;

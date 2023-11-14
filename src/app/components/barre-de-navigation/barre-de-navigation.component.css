@@ -29,6 +29,12 @@ ul {
  font-family: 'Urbanist', sans-serif;
 }
 
-
+.custom-toggler {
+    background-color: #83E8Ba; /* Couleur du menu burger */
+    border: 1px solid #83E8Ba; /* Couleur de la bordure de la zone de contenu contrôlée */
+    border-radius: 5px; /* Ajoutez ceci pour arrondir les coins si nécessaire */
+    padding-left: 6px;
+    padding-right: 6px;
+}
 
 

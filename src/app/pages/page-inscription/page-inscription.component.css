@@ -1,3 +1,11 @@
+.custom-page-background {
+  background-image: url('src/assets/images/fond-texture-peinture-marbree-liquide-peinture-fluide-texture-abstraite-fond-ecran-melange-couleurs-intensives.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center; 
+  image-rendering: auto; 
+}
+
 .container-subscribe {
     margin-top: 100px;
 }
@@ -6,16 +14,21 @@
     border-radius: solid;
 }
 
+.card {
+    margin-top: 10%;
+    margin-bottom: 10%; 
+    background: linear-gradient(to left, #72eb76, #df64c0);
+}
 .custom-button {
-    background-color: #f6c275;
-    border: #d5cc23 solid 2px;
+    background: linear-gradient(to left, #72eb76, #df64c0);
+    border: #63888d solid 1px;
     color: #1c0913; 
     transition: background-color 0.3s; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .custom-button:hover {
-     background-color: #f6c275; 
-     transform: scale(1.07);
+    background: linear-gradient(to left, #cbc5ea, #83e8ba); 
+     transform: scale(1.05);
      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
