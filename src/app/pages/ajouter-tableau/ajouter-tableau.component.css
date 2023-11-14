@@ -1,6 +1,5 @@
 body {
-    background: linear-gradient(to right, #f000b5 10%, #05e10b 90%);
-    background-image: url('src/assets/images/rangoli-design-fond-noir.jpg');
+  background-image: url('src/assets/images/rangoli-design-fond-noir.jpg');
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center; 
@@ -11,7 +10,7 @@ body {
 .card {
     margin-top: 10%;
     margin-bottom: 10%; 
-     background: linear-gradient(to left, #72eb76, #df64c0);
+    background: linear-gradient(to left, #72eb76, #df64c0);
 }
 .custom-button {
     background: linear-gradient(to left, #72eb76, #df64c0);

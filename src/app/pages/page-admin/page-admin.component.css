@@ -1,10 +1,10 @@
 .custom-page-background {
-  background-image: url('src/assets/images/rangoli-design-fond-noir.jpg');
-  background-size: cover; 
-  background-repeat: no-repeat;
+   /* background: linear-gradient(to left, #1c0913, #f4a6a5); */
+  background-image: url('src/assets/images/fond-bokeh-abstrait-lumieres-colorees.jpg');
+  background-size: auto; 
+  background-repeat: repeat-y;
   background-position: center; 
   image-rendering: auto; 
- 
 }
 
 .modern-table {
@@ -19,8 +19,8 @@
 }
  
 .modern-table thead tr {
-  background-color: #83E8Ba;
-   color: #407076;
+  background: linear-gradient(to right, #1c0913, #957186);
+   color: #83E8Ba;
    text-align: left;
 }
  
@@ -65,8 +65,8 @@
 }
  
 .edit-btn {
-  background-color: #407076;
-  color: #fff;
+  background-color: #83E8Ba;
+  color: #1c0913;
   margin: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -78,7 +78,7 @@
  
 .confirm-btn {
   background-color: #83E8Ba;
-  color: #fff;
+  color: #1c0913;
 }
  
 td {
@@ -86,15 +86,17 @@ td {
 }
 
 .custom-button {
-    background: linear-gradient(to left, #83e8ba, #cbc5ea);
-    border: #63888d solid 2px;
+    background-color: #f6c275;
+    border: #d5cc23 solid 2px;
+    border-radius: 5px;
     color: #1c0913; 
     transition: background-color 0.3s; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 7px;
 }
 
 .custom-button:hover {
-     background: linear-gradient(to left, #cbc5ea, #83e8ba); 
+     background-color: #f6c275; 
      transform: scale(1.07);
      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
@@ -109,13 +111,13 @@ td {
 }
 
 .confirm-btn::after {
-  content: "";
+  /* content: ""; */
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  border: 2px solid #56967a;
+  border: 2px solid rgb(61, 201, 173);
   box-sizing: border-box;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -123,7 +125,7 @@ td {
 }
 
 .delete-btn::after{
-  content: "";
+  /* content: ""; */
   position: absolute;
   width: 100%;
   height: 100%;
@@ -137,13 +139,13 @@ td {
 }
 
 .edit-btn::after{
-  content: "";
+  /* content: ""; */
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
-  border: 2px solid #233e42;
+  border: 2px solid rgb(61, 201, 173);
   box-sizing: border-box;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -157,5 +159,6 @@ td {
 }
 
 td {
-  background-color: white;
+  background-color:rgba(255, 255, 255, 0.7);
+  /* backdrop-filter: blur(20px); */
 }

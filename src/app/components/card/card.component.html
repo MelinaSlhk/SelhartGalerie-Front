@@ -3,6 +3,8 @@
         <div class="face face1">
             <div class="content">
               <img [src]="tableauImage" class="img-fluid">
+            <button (click)="ajouterAuxFavoris()" class="favoris-button"><i class="heart-icon" [ngClass]="{ 'favorite': estFavori }" [class]="estFavori ? 'fas fa-heart' : 'far fa-heart'"></i>
+            </button>
             </div>
         
         </div>
@@ -23,9 +25,7 @@
                     <button class="go-button" type="submit">Envoyer</button>
                     </div>
                 </form>
-                <button (click)="ajouterAuxFavoris()" class="favoris-button">
-                    <i class="heart-icon" [ngClass]="{ 'favorite': estFavori }" [class]="estFavori ? 'fas fa-heart' : 'far fa-heart'"></i>
-                </button> 
+                
             </div>
         </div>
     </div>

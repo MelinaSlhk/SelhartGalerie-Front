@@ -1,6 +1,3 @@
- h2 {
-    font-family: Monospace;
-  }
 .marge{
     border-color: white;
     border-width: 5px;
@@ -17,11 +14,27 @@ body{
  background-image: url("src/assets/images/Color-Neon-Splatter-Paint-Designs-On-Black-Background-71737400-1.png");
     color: white;
 }
+
+h1 {
+ font-family: 'Urbanist', sans-serif;
+}
+
+h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 35px;
+}
+
+h3 {
+ font-family: 'Urbanist', sans-serif;  
+}
+
 .colonne{
   columns: 2;
   text-align: justify;
   margin:20px;
   padding:10px;
+  font-family: 'Caveat', cursive;
+  font-size: 25px;
 }
 
 .tableaux-link {

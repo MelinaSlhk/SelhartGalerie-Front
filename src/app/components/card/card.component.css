@@ -57,11 +57,32 @@
 }
 
 .container .card .face.face1 .content i{
-  font-size: 3em;
-  color: white;
+  font-size: 2em;
+  color: red;
   display: inline-block;
+  position: relative;
+  margin-right: 20px;
+  padding-top: 95%;
 }
 
+.container .card .face.face1 .content i::before {
+  content: '\2665'; /* Code Unicode pour le symbole du cœur */
+  font-size: 1em;
+  color: black; /* Couleur de la bordure noire */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .card .face.face1 .content i.favorite::before {
+  color: red; /* Couleur de l'intérieur rouge lorsque l'icône est en favori */
+}
+
+.container .card .face.face1 .content i:hover::before {
+  color: red; /* Changement de la couleur de l'intérieur au survol */
+}
 .container .card .face.face1 .content h3{
   font-size: 1em;
   color: white;
@@ -126,6 +147,7 @@
 
  .zoneAvis ul {
   padding: 5px; 
+  font-size: 13px;
 }
 
 li {
@@ -145,29 +167,47 @@ width: 45%;
 border: 1px solid #83E8Ba;
 }
 
-.heart-icon {
-  font-size: 24px; /* Ajustez la taille de l'icône selon vos besoins */
-  cursor: pointer;
+.card {
+  position: relative;
+  width: 300px; /* ajustez la largeur de la carte selon vos besoins */
 }
 
-.favorite {
-  color: red; /* Couleur rouge pour l'icône du cœur */
+.face .content {
+  position: relative;
 }
 
 .favoris-button {
-  background: whitesmoke;
+  position: absolute;
+  top: 10px; 
+  right: 10px; 
+  background: transparent;
   border: none;
-  padding-left: 105%;
+  cursor: pointer;
+ 
+}
+
+.favoris-button .heart-icon {
+  font-size: 24px;
+  cursor: pointer;
 }
 
 img {
   border-radius: 10px;
-  
+}
+
+h5 {
+  font-family: 'Urbanist', sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: 'Urbanist', sans-serif;
+   font-weight: bold;
 }
 
 @media (max-width: 480px) {
 .container {
-  margin-left: 20px;
+  margin-left: 5px;
   width: 360px;
 }
 }

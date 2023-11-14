@@ -1,6 +1,8 @@
+<div class="custom-page-background">
 <app-barre-de-recherche (inputUtilisateur)="handleSearch($event)"></app-barre-de-recherche>
 
-<h2>Mes Favoris</h2>
+<h2><strong>Mes Favoris</strong></h2>
 <div class="d-flex flex-row flex-wrap">
         <app-card [tableau]="tableau" *ngFor="let tableau of favoris"></app-card>
   </div>
+</div>

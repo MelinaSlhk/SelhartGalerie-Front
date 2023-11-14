@@ -1,0 +1,13 @@
+/* .custom-page-background {
+  background-image: url('src/assets/images/top-view-abstract-bright-colorful-holi-powder.jpg');
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center; 
+  image-rendering: auto; 
+} */
+
+h2 {
+     font-family: 'Urbanist', sans-serif;
+     padding-left: 1%;
+     font-size: 40px;
+}

@@ -8,10 +8,11 @@ margin-top: 0;
 margin-right: 4%;
 color: white;
 width: 150px;
+font-family: 'Urbanist', sans-serif;
 }
 
 .nav-link:hover {
-  color: #83E8Ba;
+  color: #efc88f;
   text-decoration: underline;
 }
 
@@ -22,6 +23,10 @@ width: 150px;
 .navbar-nav .nav-link:hover {
   color: white !important; /* Couleur au survol */
   text-decoration: underline; /* Soulignement au survol (facultatif) */
+}
+
+ul {
+ font-family: 'Urbanist', sans-serif;
 }
 
 
