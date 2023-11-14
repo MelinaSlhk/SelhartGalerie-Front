@@ -1,5 +1,4 @@
 .custom-page-background {
-   /* background: linear-gradient(to left, #1c0913, #f4a6a5); */
   background-image: url('src/assets/images/fond-bokeh-abstrait-lumieres-colorees.jpg');
   background-size: auto; 
   background-repeat: repeat-y;
@@ -93,6 +92,8 @@ td {
     transition: background-color 0.3s; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 7px;
+    padding-top: 2px;
+    padding-bottom: 3px;
 }
 
 .custom-button:hover {

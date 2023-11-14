@@ -22,13 +22,13 @@
                                 <label class="form-check-label" for="remember">Se souvenir de moi</label>
                             </div>
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-primary mt-5" [disabled]="!connexionForm.valid">
+                            <button type="submit" class="btn btn-primary mt-5 custom-button" [disabled]="!connexionForm.valid">
                                 Connectez-vous à votre compte
                             </button>
                         </div> 
                         <div class="d-flex justify-content-center mt-2">
                             <div class="text-sm font-medium text-muted mt-2">
-                                Pas enregistré ? <a href="#" class="text-primary" [routerLink]="'/inscription'">Créer un compte</a>
+                                Pas enregistré ? <a href="#" class="text-primary create-account-link" [routerLink]="'/inscription'">Créer un compte</a>
                             </div>
                         </div>
                          </form>
