@@ -9,7 +9,8 @@ body {
 .card {
     margin-top: 10%;
     margin-bottom: 10%; 
-    background: linear-gradient(to left, #72eb76, #df64c0);
+    background: linear-gradient(to left, rgba(114, 235, 118, 0.9), rgba(223, 100, 192, 0.9));
+    /* background: linear-gradient(to left, #72eb76, #df64c0); */
 }
 .custom-button {
     background: linear-gradient(to left, #72eb76, #df64c0);

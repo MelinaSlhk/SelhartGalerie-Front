@@ -17,10 +17,11 @@ p {
 .card {
     margin-top: 10%;
     margin-bottom: 10%; 
-    background: linear-gradient(to left, #194DE3, #df64c0);
+      background: linear-gradient(to left, rgba(86, 123, 237, 0.650), rgba(223, 100, 192, 0.650));
+    /* background: linear-gradient(to left, #567bed, #df64c0); */
 }
 .custom-button {
-    background: linear-gradient(to left, #194DE3, #df64c0);
+    background: linear-gradient(to left, #2150de, #df64c0);
     border: #63888d solid 1px;
     color: #1c0913; 
     transition: background-color 0.3s; 
@@ -28,7 +29,7 @@ p {
 }
 
 .custom-button:hover {
-    background: linear-gradient(to left, #cbc5ea, #194DE3); 
+    background: linear-gradient(to left, #df64c0, #2150de); 
      transform: scale(1.05);
      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }

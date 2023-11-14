@@ -9,10 +9,12 @@
 .card {
     margin-top: 10%;
     margin-bottom: 10%; 
-    background: linear-gradient(to left, #72eb76, #a861e6);
+    background: linear-gradient(to left, rgba(114, 235, 118, 0.950), rgba(204, 35, 246, 0.950));
+    /* background: linear-gradient(to left, #72eb76, #cc23f6); */
+    
 }
 .custom-button {
-    background: linear-gradient(to left, #72eb76, #8e49ca);
+    background: linear-gradient(to left, #72eb76, #81059f);
     border: #63888d solid 1px;
     color: #1c0913; 
     transition: background-color 0.3s; 
@@ -20,7 +22,12 @@
 }
 
 .custom-button:hover {
-    background: linear-gradient(to left, #8e49ca, #83e8ba); 
+    background: linear-gradient(to left, #81059f, #83e8ba); 
      transform: scale(1.05);
      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.create-account-link:hover {
+    color: #83e8ba !important;
+    text-decoration: underline !important;
 }

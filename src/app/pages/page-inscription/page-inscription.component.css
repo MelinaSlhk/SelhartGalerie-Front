@@ -17,8 +17,9 @@
 .card {
     margin-top: 10%;
     margin-bottom: 10%; 
-    background: linear-gradient(to left, #72eb76, #df64c0);
+    background: linear-gradient(to left, rgba(114, 235, 118, 0.950), rgba(223, 100, 192, 0.950));
 }
+
 .custom-button {
     background: linear-gradient(to left, #72eb76, #df64c0);
     border: #63888d solid 1px;
@@ -31,4 +32,9 @@
     background: linear-gradient(to left, #cbc5ea, #83e8ba); 
      transform: scale(1.05);
      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.font-weight-medium:hover {
+    color: rgb(247, 17, 197) !important;
+    text-decoration: underline !important;
 }
