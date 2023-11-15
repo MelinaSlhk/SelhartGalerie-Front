@@ -12,7 +12,7 @@ img {
 }
 body{
  background-image: url("src/assets/images/Color-Neon-Splatter-Paint-Designs-On-Black-Background-71737400-1.png");
-    color: white;
+  color: white;
 }
 
 h1 {
@@ -52,8 +52,12 @@ h3 {
   padding: 0 12px; /* Ajustez la valeur de padding selon vos préférences */
   border-radius: 12px;
 }
-
+ 
 .colonne{
   backdrop-filter: blur(30px);
   border-radius: 12px;
+}
+
+.text-center {
+  margin-bottom: 0;
 }
