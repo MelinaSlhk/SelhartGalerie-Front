@@ -5,13 +5,18 @@
   background-position: center; 
   image-rendering: auto; 
 }
+h2 {
+    color: white;
+}
 
 h5 {
     padding-top: 8%;
+    color: white;
 }
 
 p {
     padding-top: 5%;
+    color: white;
 }
 
 .card {
@@ -23,7 +28,7 @@ p {
 .custom-button {
     background: linear-gradient(to left, #2150de, #df64c0);
     border: #63888d solid 1px;
-    color: #1c0913; 
+    color: #fff; 
     transition: background-color 0.3s; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
