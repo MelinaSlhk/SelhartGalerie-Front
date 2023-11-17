@@ -67,7 +67,7 @@
 .container .card .face.face1 .content i::before {
   content: '\2665'; /* Code Unicode pour le symbole du cœur */
   font-size: 1em;
-  color: #957186; /* Couleur de la bordure noire */
+  color: #1c0913; /* Couleur de la bordure noire */
   position: absolute;
   top: 0;
   left: 0;
@@ -76,8 +76,8 @@
 }
 
 .container .card .face.face1 .content i.favorite::before {
-  color: #957186; /* Couleur de l'intérieur rouge lorsque l'icône est en favori */
-}
+  color: #1c0913; /* Couleur de l'intérieur rouge lorsque l'icône est en favori */
+ }
 
 .container .card .face.face1 .content i:hover::before {
   color: #83E8Ba; /* Changement de la couleur de l'intérieur au survol */
@@ -178,7 +178,7 @@ border: 1px solid #83E8Ba;
 .favoris-button {
   position: absolute;
   top: 10px; 
-  right: 10px; 
+  right: 13px; 
   background: transparent;
   border: none;
   cursor: pointer;
