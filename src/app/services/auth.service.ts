@@ -17,12 +17,7 @@ export class AuthService {
   public isAdmin$ = new BehaviorSubject(localStorage.getItem('administrateur'));
 
   constructor(private http: HttpClient, private router: Router) {
-    // const token = localStorage.getItem('token');
-    // if (token) {
-    //   this.isConnected$ = new BehaviorSubject(true);
-    // } else {
-    //   this.isConnected$ = new BehaviorSubject(false);
-    // }
+    
   }
 
   connexion(email: string, motdepasse: string): Observable<Connexion> {

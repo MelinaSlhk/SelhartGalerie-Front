@@ -49,9 +49,8 @@ export class AjouterTableauComponent {
         nom: this.ajouterTableauForm.get('nom')?.value,
         dimension: this.ajouterTableauForm.get('dimension')?.value,
         id_image: this.idImage
-        
-      };
-      console.log('are you ok ? ', data);
+     };
+            
       this.tableauService.ajouterTableau(data).subscribe({
         next: (response) => {
           console.log(data);
